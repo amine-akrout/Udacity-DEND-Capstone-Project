@@ -137,8 +137,11 @@ For covid-19 data, since the downloaded files includes all contries, we start by
 The weather dataset includes some unnecessary columns and will be removed.
 
 ### Step 3: Define the Data Model
+
 #### Data lake schema
-<b> Fact table <b>
+We are going to use a star schema with 1 fact table and 6 dimension tables.
+
+<b> Fact table </b>
 1. revenue table
     
 | Column Name | Data Type| Description|
@@ -153,7 +156,7 @@ The weather dataset includes some unnecessary columns and will be removed.
 | day| int| The day
 
     
-<b> Dimension tables <b>
+<b> Dimension tables </b>
 1. host table
 
 | Column Name| Data Type| Description|
@@ -225,16 +228,22 @@ The weather dataset includes some unnecessary columns and will be removed.
 
 ### Step 4: Run ETL to Model the Data
 #### Clone repository to local machine
+
+
 ```
 git clone https://github.com/amine-akrout/Udacity-DEND-Capstone-Project.git
 ```
 
 #### Change directory to local repository
+
+
 ```
 cd Udacity-DEND-Capstone-Project
 ```
 
 #### Create python virtual environment
+
+
 ```
 python3 -m venv venv             # create virtualenv
 source venv/bin/activate         # activate virtualenv
@@ -242,6 +251,7 @@ pip install -r requirements.txt  # install requirements
 ```
 
 #### Download and get the data
+
 - Airbnb Data:
 Download and save the data in the folder `data/airbnb_paris_data/`
 - Covid-19 Data:
@@ -251,6 +261,7 @@ Use the script covid_data_download.py to automatically download covid data and s
 cd src/download_data_script
 python covid_data_download.py
 ```
+
 - Weather Data:
 Use the script `weather_data_download.py` to automatically download weather data using meteostat [API](https://dev.meteostat.net/python/daily.html#example)  and save it in JSON format
     
@@ -260,7 +271,10 @@ python covid_data_download.py
 
 
 #### Start Airflow Container
+
 We are going to use [Bitnami image](https://github.com/bitnami/bitnami-docker-airflow) for the airflow container
+
+
 ```
 cd ../..
 docker-compose up
