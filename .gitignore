@@ -1,0 +1,18 @@
+# Jupyter notebooks
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# Pycharm
+.idea
+
+# Extracted data
+data/airbnb_paris_data/*
+data/covid19_data/*
+data/weather_data/*
+
+# Output data
+output_tables
+
+# Virtual environment
+env/
+venv/

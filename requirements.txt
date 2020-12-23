@@ -1,0 +1,4 @@
+matplotlib==3.3.3
+pyspark==3.0.0
+meteostat==1.0.0
+requests==2.25.1
